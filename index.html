@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11130e">
+  <title>弥光塔罗 · 聆听内在的回声</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="弥光塔罗首页">
+      <span class="brand-mark">✦</span><span>弥光塔罗</span><small>MYSTIC LIGHT</small>
+    </a>
+    <nav aria-label="主导航">
+      <button class="nav-link active" data-view="reading">占卜</button>
+      <button class="nav-link" data-view="deck">牌库</button>
+      <button class="nav-link" data-view="journal">指引</button>
+    </nav>
+    <button class="icon-btn sound-btn" aria-label="开关环境音">♬</button>
+  </header>
+
+  <main>
+    <section id="reading" class="view active-view">
+      <div class="hero">
+        <div class="eyebrow"><span></span> 你的此刻，值得被认真聆听 <span></span></div>
+        <h1>向内寻找，<em>答案自会浮现</em></h1>
+        <p>静下心来，在心中默念你的问题。<br>选择一种牌阵，让潜意识为你点亮一盏灯。</p>
+        <div class="moon-orbit" aria-hidden="true"><i></i><b>☾</b><i></i></div>
+      </div>
+
+      <div class="section-head">
+        <div><span class="step">01</span><h2>选择牌阵</h2></div>
+        <p>不同的牌阵，为不同的困惑提供视角</p>
+      </div>
+
+      <div class="spread-grid">
+        <button class="spread-card selected" data-spread="single">
+          <span class="badge">每日指引</span><span class="mini-layout one"><i></i></span>
+          <h3>一张牌</h3><p>为当下提供简洁而清晰的启示</p><footer><span>1 张牌</span><b>适合初次体验</b></footer>
+        </button>
+        <button class="spread-card" data-spread="three">
+          <span class="mini-layout three"><i></i><i></i><i></i></span>
+          <h3>时间之流</h3><p>看见过去、现在与未来的脉络</p><footer><span>3 张牌</span><b>经典牌阵</b></footer>
+        </button>
+        <button class="spread-card" data-spread="choice">
+          <span class="mini-layout choice"><i></i><i></i><i></i><i></i><i></i></span>
+          <h3>抉择之路</h3><p>当两条道路摆在面前，听见内心</p><footer><span>5 张牌</span><b>选项分析</b></footer>
+        </button>
+        <button class="spread-card" data-spread="celtic">
+          <span class="badge muted">深度探索</span><span class="mini-layout celtic"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <h3>凯尔特十字</h3><p>全面梳理现状、挑战与潜在方向</p><footer><span>10 张牌</span><b>完整解读</b></footer>
+        </button>
+      </div>
+
+      <div class="question-box">
+        <label for="question"><span class="step">02</span> 写下你的问题 <small>选填 · 只保存在当前页面</small></label>
+        <textarea id="question" maxlength="80" placeholder="例如：此刻的我，最需要关注什么？"></textarea>
+        <span class="counter">0 / 80</span>
+      </div>
+      <div class="start-wrap"><button id="startReading" class="primary-btn"><span>开始洗牌</span><i>✦</i></button><small>深呼吸三次，准备好时再开始</small></div>
+    </section>
+
+    <section id="deck" class="view">
+      <div class="page-intro"><span class="eyebrow">THE COMPLETE DECK</span><h1>探索 78 张塔罗</h1><p>每一张牌，都是一面照见内在的镜子。</p></div>
+      <div class="deck-tools"><input id="cardSearch" type="search" placeholder="搜索卡牌或关键词…"><div class="filters"><button class="active" data-suit="all">全部 78</button><button data-suit="major">大阿卡那</button><button data-suit="wands">权杖</button><button data-suit="cups">圣杯</button><button data-suit="swords">宝剑</button><button data-suit="pentacles">星币</button></div></div>
+      <div id="deckGrid" class="deck-grid"></div>
+    </section>
+
+    <section id="journal" class="view">
+      <div class="page-intro"><span class="eyebrow">A GENTLE GUIDE</span><h1>如何聆听塔罗</h1><p>牌不会替你决定，它邀请你看见更多可能。</p></div>
+      <div class="guide-grid"><article><b>01</b><h3>提出开放问题</h3><p>与其问“会不会”，不如问“我可以如何理解和行动”。这会带来更有力量的视角。</p></article><article><b>02</b><h3>留意第一感受</h3><p>翻牌时最先吸引你的符号、颜色和感受，往往是潜意识正在回应的部分。</p></article><article><b>03</b><h3>把选择还给自己</h3><p>解读不是预言。将牌面作为观察当下的工具，最终决定始终在你手中。</p></article></div>
+    </section>
+  </main>
+
+  <div id="readingModal" class="modal" aria-hidden="true"><div class="modal-panel reading-panel"><button class="close" aria-label="关闭">×</button><div id="readingContent"></div></div></div>
+  <div id="cardModal" class="modal" aria-hidden="true"><div class="modal-panel card-panel"><button class="close" aria-label="关闭">×</button><div id="cardContent"></div></div></div>
+  <footer class="site-footer"><span>✦</span><p>塔罗是自我探索的工具，而非命运的定论</p><span>☾</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
