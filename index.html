@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07112f">
+  <title>弥光塔罗 · ARCANA SYSTEM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="world-bg" aria-hidden="true"><i></i><i></i><i></i><strong>ARCANA</strong></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="弥光塔罗首页"><span class="brand-mark">✦</span><span>弥光<br><small>ARCANA SYSTEM</small></span></a>
+    <nav aria-label="主导航">
+      <button class="nav-link active" data-view="reading"><b>01</b> 占卜</button>
+      <button class="nav-link" data-view="deck"><b>02</b> 牌库</button>
+      <button class="nav-link" data-view="journal"><b>03</b> 指引</button>
+    </nav>
+    <span class="system-state"><i></i> INNER SIGNAL / ONLINE</span>
+  </header>
+
+  <main>
+    <section id="reading" class="view active-view">
+      <div class="home-stage" data-layout="single">
+        <div class="depth-copy" aria-hidden="true"><strong>ARCANA</strong><span>✦ Ⅶ ☽</span></div>
+        <div class="hero-copy"><span class="kicker">DIVINATION / RITUAL READY</span><h1>向内寻找<br><em>答案自会浮现</em></h1><p id="spreadHint">为当下提供一个清晰视角</p></div>
+        <div id="homeCards" class="home-cards" aria-label="等待洗牌的塔罗牌">
+          <button class="home-card" style="--i:0" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:1" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:2" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:3" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:4" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:5" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:6" aria-label="塔罗牌背面"></button>
+        </div>
+        <aside class="spread-rail" aria-label="选择牌阵">
+          <span>SELECT SPREAD</span>
+          <button class="spread-option selected" data-spread="single"><b>01</b><span>一张牌<small>DAILY SIGNAL</small></span></button>
+          <button class="spread-option" data-spread="three"><b>02</b><span>时间之流<small>PAST / NOW / NEXT</small></span></button>
+          <button class="spread-option" data-spread="choice"><b>03</b><span>抉择之路<small>TWO DIRECTIONS</small></span></button>
+          <button class="spread-option" data-spread="celtic"><b>04</b><span>凯尔特十字<small>DEEP SCAN</small></span></button>
+        </aside>
+        <div class="launch-row"><div><span>SELECTED / <b id="selectedSpreadLabel">一张牌</b></span><p>点击进入完整抽牌仪式</p></div><button id="startReading" class="slash-button"><span>开始仪式</span><b>↗</b></button></div>
+      </div>
+    </section>
+
+    <section id="deck" class="view deck-view">
+      <div class="deck-heading"><span class="kicker">ARCHIVE / 78 SIGNALS</span><h1>牌组<br><em>档案</em></h1></div>
+      <div class="deck-tools"><label><span>SEARCH</span><input id="cardSearch" type="search" placeholder="中文 / ENGLISH / 关键词"></label><div class="filters"><button class="active" data-suit="all">全部</button><button data-suit="major">大阿卡那</button><button data-suit="wands">权杖</button><button data-suit="cups">圣杯</button><button data-suit="swords">宝剑</button><button data-suit="pentacles">星币</button></div></div>
+      <div class="deck-stage">
+        <button class="deck-arrow prev" aria-label="上一张牌">‹</button>
+        <div id="deckFocus" class="deck-focus"></div>
+        <div id="deckTrack" class="deck-track" aria-label="卡牌轨道"></div>
+        <button class="deck-arrow next" aria-label="下一张牌">›</button>
+        <div id="deckCount" class="deck-count"></div>
+      </div>
+      <p class="deck-help">滚轮 / 方向键 / 点击轨道切换 · ENTER 查看完整释义</p>
+    </section>
+
+    <section id="journal" class="view guide-view">
+      <div class="guide-title"><span class="kicker">FIELD MANUAL / 03 RULES</span><h1>聆听，而非<br><em>预测。</em></h1></div>
+      <div class="guide-list"><article><b>01</b><div><h2>提出开放问题</h2><p>与其问“会不会”，不如问“我可以如何理解和行动”。</p></div></article><article><b>02</b><div><h2>留意第一感受</h2><p>最先吸引你的符号、颜色和感受，往往是潜意识的回应。</p></div></article><article><b>03</b><div><h2>把选择还给自己</h2><p>塔罗呈现可能性；决定方向的人，始终是你。</p></div></article></div>
+    </section>
+  </main>
+
+  <section id="ritual" class="ritual" role="dialog" aria-modal="true" aria-hidden="true" aria-label="抉择之路仪式">
+    <div class="ritual-lines" aria-hidden="true"><i></i><i></i><i></i></div><button class="ritual-close" aria-label="退出仪式">×</button>
+    <div id="ritualAsk" class="ritual-step ask active"><span class="kicker">PHASE 01 / FORM THE QUESTION</span><div class="ritual-orbit"><i></i><b>✦</b></div><h2>你想向牌询问什么？</h2><p>将注意力放在你可以理解或行动的部分</p><label><input id="ritualQuestion" maxlength="80" placeholder="在这里写下你的问题…"><span id="ritualCounter">0 / 80</span></label><button id="ritualContinue" class="slash-button"><span>继续</span><b>→</b></button></div>
+    <div id="ritualShuffle" class="ritual-step shuffle"><span class="kicker">PHASE 02 / SHUFFLING</span><div class="card-back-stack"><i></i><i></i><i></i><b>✦</b></div><h2>正在聆听你的问题</h2><p>保持呼吸，让两个方向逐渐清晰</p></div>
+    <div id="ritualResult" class="ritual-step ritual-result"><div class="ritual-result-head"><span class="kicker">PHASE 03 / TWO DIRECTIONS</span><h2>两种可能，同一个选择者</h2><p id="ritualTopic"></p></div><div id="choiceCards" class="choice-cards"></div><div class="ritual-actions"><button id="ritualRedraw">重新洗牌</button><button id="ritualDone" class="slash-button"><span>完成解读</span><b>✓</b></button></div><small>仅供娱乐与自我探索，不构成现实预测或决策建议。</small></div>
+  </section>
+
+  <section id="readingScene" class="reading-scene" role="dialog" aria-modal="true" aria-hidden="true" aria-label="塔罗抽牌仪式">
+    <div class="scene-bg" aria-hidden="true">RITUAL <span>✦</span></div><div class="scene-rays" aria-hidden="true"></div><button class="scene-close" aria-label="关闭牌阵">×</button>
+    <header><span class="kicker">LIVE READING / <b id="readingSpreadName"></b></span><h2 id="readingTopic">正在进入仪式</h2><div id="phaseRail" class="phase-rail"><i class="active">过渡</i><i>洗牌</i><i>排阵</i><i>选牌</i><i>揭示</i><i>解读</i></div></header>
+    <div id="ritualDeck" class="ritual-deck" aria-hidden="true"></div>
+    <div id="readingCards" class="reading-cards"></div>
+    <aside id="readingSummary" class="reading-summary"></aside>
+    <div class="reading-actions"><button id="revealAll" class="slash-button"><span>依次揭示</span><b>✦</b></button><button id="redraw" class="slash-button redraw"><span>重新开始</span><b>↻</b></button></div>
+  </section>
+
+  <section id="detailScene" class="detail-scene" role="dialog" aria-modal="true" aria-hidden="true" aria-label="卡牌完整解释">
+    <button class="detail-close" aria-label="关闭详情">×</button><button class="detail-nav detail-prev" aria-label="上一张牌">‹</button><div id="detailCard" class="detail-card"></div><div id="detailInfo" class="detail-info"></div><button class="detail-nav detail-next" aria-label="下一张牌">›</button>
+  </section>
+  <footer><span>© MYSTIC LIGHT</span><p>SELF-REFLECTION / ENTERTAINMENT ONLY</p><span>VER. 02.0</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
