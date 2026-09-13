@@ -3,83 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#11130e">
-  <title>弥光塔罗 · 聆听内在的回声</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#07112f">
+  <title>弥光塔罗 · ARCANA SYSTEM</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="grain"></div>
+  <div class="world-bg" aria-hidden="true"><i></i><i></i><i></i><strong>ARCANA</strong></div>
   <header class="topbar">
-    <a class="brand" href="#" aria-label="弥光塔罗首页">
-      <span class="brand-mark">✦</span><span>弥光塔罗</span><small>MYSTIC LIGHT</small>
-    </a>
+    <a class="brand" href="#" aria-label="弥光塔罗首页"><span class="brand-mark">✦</span><span>弥光<br><small>ARCANA SYSTEM</small></span></a>
     <nav aria-label="主导航">
-      <button class="nav-link active" data-view="reading">占卜</button>
-      <button class="nav-link" data-view="deck">牌库</button>
-      <button class="nav-link" data-view="journal">指引</button>
+      <button class="nav-link active" data-view="reading"><b>01</b> 占卜</button>
+      <button class="nav-link" data-view="deck"><b>02</b> 牌库</button>
+      <button class="nav-link" data-view="journal"><b>03</b> 指引</button>
     </nav>
-    <button class="icon-btn sound-btn" aria-label="开关环境音">♬</button>
+    <span class="system-state"><i></i> INNER SIGNAL / ONLINE</span>
   </header>
 
   <main>
     <section id="reading" class="view active-view">
-      <div class="hero">
-        <div class="eyebrow"><span></span> 你的此刻，值得被认真聆听 <span></span></div>
-        <h1>向内寻找，<em>答案自会浮现</em></h1>
-        <p>静下心来，在心中默念你的问题。<br>选择一种牌阵，让潜意识为你点亮一盏灯。</p>
-        <div class="moon-orbit" aria-hidden="true"><i></i><b>☾</b><i></i></div>
+      <div class="reading-hero">
+        <div class="hero-copy"><span class="kicker">DIVINATION / SELECT A SPREAD</span><h1>向内寻找<br><em>答案自会浮现</em></h1><p>选择一个观察角度。牌不是预言，而是此刻与你对话的镜面。</p></div>
+        <div class="sigil" aria-hidden="true"><span>☽</span><b>VII</b></div>
+        <div class="hero-index" aria-hidden="true">01</div>
       </div>
-
-      <div class="section-head">
-        <div><span class="step">01</span><h2>选择牌阵</h2></div>
-        <p>不同的牌阵，为不同的困惑提供视角</p>
+      <div class="spread-strip" aria-label="选择牌阵">
+        <button class="spread-option selected" data-spread="single"><b>01</b><span>一张牌<small>DAILY SIGNAL</small></span><i>1</i></button>
+        <button class="spread-option" data-spread="three"><b>02</b><span>时间之流<small>PAST / NOW / NEXT</small></span><i>3</i></button>
+        <button class="spread-option ritual-option" data-spread="choice"><b>03</b><span>抉择之路<small>TWO DIRECTIONS</small></span><i>2</i></button>
+        <button class="spread-option" data-spread="celtic"><b>04</b><span>凯尔特十字<small>DEEP SCAN</small></span><i>10</i></button>
       </div>
-
-      <div class="spread-grid">
-        <button class="spread-card selected" data-spread="single">
-          <span class="badge">每日指引</span><span class="mini-layout one"><i></i></span>
-          <h3>一张牌</h3><p>为当下提供简洁而清晰的启示</p><footer><span>1 张牌</span><b>适合初次体验</b></footer>
-        </button>
-        <button class="spread-card" data-spread="three">
-          <span class="mini-layout three"><i></i><i></i><i></i></span>
-          <h3>时间之流</h3><p>看见过去、现在与未来的脉络</p><footer><span>3 张牌</span><b>经典牌阵</b></footer>
-        </button>
-        <button class="spread-card" data-spread="choice">
-          <span class="mini-layout choice"><i></i><i></i><i></i><i></i><i></i></span>
-          <h3>抉择之路</h3><p>当两条道路摆在面前，听见内心</p><footer><span>5 张牌</span><b>选项分析</b></footer>
-        </button>
-        <button class="spread-card" data-spread="celtic">
-          <span class="badge muted">深度探索</span><span class="mini-layout celtic"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-          <h3>凯尔特十字</h3><p>全面梳理现状、挑战与潜在方向</p><footer><span>10 张牌</span><b>完整解读</b></footer>
-        </button>
-      </div>
-
-      <div class="question-box">
-        <label for="question"><span class="step">02</span> 写下你的问题 <small>选填 · 只保存在当前页面</small></label>
-        <textarea id="question" maxlength="80" placeholder="例如：此刻的我，最需要关注什么？"></textarea>
-        <span class="counter">0 / 80</span>
-      </div>
-      <div class="start-wrap"><button id="startReading" class="primary-btn"><span>开始洗牌</span><i>✦</i></button><small>深呼吸三次，准备好时再开始</small></div>
+      <div class="launch-row"><div><span>READY TO READ</span><p id="spreadHint">为当下提供一个清晰视角</p></div><button id="startReading" class="slash-button"><span>进入牌阵</span><b>↗</b></button></div>
     </section>
 
-    <section id="deck" class="view">
-      <div class="page-intro"><span class="eyebrow">THE COMPLETE DECK</span><h1>探索 78 张塔罗</h1><p>每一张牌，都是一面照见内在的镜子。</p></div>
-      <div class="deck-tools"><input id="cardSearch" type="search" placeholder="搜索卡牌或关键词…"><div class="filters"><button class="active" data-suit="all">全部 78</button><button data-suit="major">大阿卡那</button><button data-suit="wands">权杖</button><button data-suit="cups">圣杯</button><button data-suit="swords">宝剑</button><button data-suit="pentacles">星币</button></div></div>
-      <div id="deckGrid" class="deck-grid"></div>
+    <section id="deck" class="view deck-view">
+      <div class="deck-heading"><span class="kicker">ARCHIVE / 78 SIGNALS</span><h1>牌组<br><em>档案</em></h1></div>
+      <div class="deck-tools"><label><span>SEARCH</span><input id="cardSearch" type="search" placeholder="中文 / ENGLISH / 关键词"></label><div class="filters"><button class="active" data-suit="all">全部</button><button data-suit="major">大阿卡那</button><button data-suit="wands">权杖</button><button data-suit="cups">圣杯</button><button data-suit="swords">宝剑</button><button data-suit="pentacles">星币</button></div></div>
+      <div class="deck-stage">
+        <button class="deck-arrow prev" aria-label="上一张牌">‹</button>
+        <div id="deckFocus" class="deck-focus"></div>
+        <div id="deckTrack" class="deck-track" aria-label="卡牌轨道"></div>
+        <button class="deck-arrow next" aria-label="下一张牌">›</button>
+        <div id="deckCount" class="deck-count"></div>
+      </div>
+      <p class="deck-help">滚轮 / 方向键 / 点击轨道切换 · ENTER 查看完整释义</p>
     </section>
 
-    <section id="journal" class="view">
-      <div class="page-intro"><span class="eyebrow">A GENTLE GUIDE</span><h1>如何聆听塔罗</h1><p>牌不会替你决定，它邀请你看见更多可能。</p></div>
-      <div class="guide-grid"><article><b>01</b><h3>提出开放问题</h3><p>与其问“会不会”，不如问“我可以如何理解和行动”。这会带来更有力量的视角。</p></article><article><b>02</b><h3>留意第一感受</h3><p>翻牌时最先吸引你的符号、颜色和感受，往往是潜意识正在回应的部分。</p></article><article><b>03</b><h3>把选择还给自己</h3><p>解读不是预言。将牌面作为观察当下的工具，最终决定始终在你手中。</p></article></div>
+    <section id="journal" class="view guide-view">
+      <div class="guide-title"><span class="kicker">FIELD MANUAL / 03 RULES</span><h1>聆听，而非<br><em>预测。</em></h1></div>
+      <div class="guide-list"><article><b>01</b><div><h2>提出开放问题</h2><p>与其问“会不会”，不如问“我可以如何理解和行动”。</p></div></article><article><b>02</b><div><h2>留意第一感受</h2><p>最先吸引你的符号、颜色和感受，往往是潜意识的回应。</p></div></article><article><b>03</b><div><h2>把选择还给自己</h2><p>塔罗呈现可能性；决定方向的人，始终是你。</p></div></article></div>
     </section>
   </main>
 
-  <div id="readingModal" class="modal" aria-hidden="true"><div class="modal-panel reading-panel"><button class="close" aria-label="关闭">×</button><div id="readingContent"></div></div></div>
-  <div id="cardModal" class="modal" aria-hidden="true"><div class="modal-panel card-panel"><button class="close" aria-label="关闭">×</button><div id="cardContent"></div></div></div>
-  <footer class="site-footer"><span>✦</span><p>塔罗是自我探索的工具，而非命运的定论</p><span>☾</span></footer>
+  <section id="ritual" class="ritual" aria-hidden="true">
+    <div class="ritual-lines" aria-hidden="true"><i></i><i></i><i></i></div><button class="ritual-close" aria-label="退出仪式">×</button>
+    <div id="ritualAsk" class="ritual-step ask active"><span class="kicker">PHASE 01 / FORM THE QUESTION</span><div class="ritual-orbit"><i></i><b>✦</b></div><h2>你想向牌询问什么？</h2><p>将注意力放在你可以理解或行动的部分</p><label><input id="ritualQuestion" maxlength="80" placeholder="在这里写下你的问题…"><span id="ritualCounter">0 / 80</span></label><button id="ritualContinue" class="slash-button"><span>继续</span><b>→</b></button></div>
+    <div id="ritualShuffle" class="ritual-step shuffle"><span class="kicker">PHASE 02 / SHUFFLING</span><div class="card-back-stack"><i></i><i></i><i></i><b>✦</b></div><h2>正在聆听你的问题</h2><p>保持呼吸，让两个方向逐渐清晰</p></div>
+    <div id="ritualResult" class="ritual-step ritual-result"><div class="ritual-result-head"><span class="kicker">PHASE 03 / TWO DIRECTIONS</span><h2>两种可能，同一个选择者</h2><p id="ritualTopic"></p></div><div id="choiceCards" class="choice-cards"></div><div class="ritual-actions"><button id="ritualRedraw">重新洗牌</button><button id="ritualDone" class="slash-button"><span>完成解读</span><b>✓</b></button></div><small>仅供娱乐与自我探索，不构成现实预测或决策建议。</small></div>
+  </section>
+
+  <section id="readingScene" class="reading-scene" aria-hidden="true">
+    <div class="scene-bg" aria-hidden="true">REVEAL <span>✦</span></div><button class="scene-close" aria-label="关闭牌阵">×</button>
+    <header><span class="kicker">LIVE READING / <b id="readingSpreadName"></b></span><h2 id="readingTopic">此刻的讯息</h2></header>
+    <div id="readingCards" class="reading-cards"></div>
+    <aside id="readingSummary" class="reading-summary"></aside>
+    <button id="redraw" class="slash-button redraw"><span>重新抽牌</span><b>↻</b></button>
+  </section>
+
+  <section id="detailScene" class="detail-scene" aria-hidden="true">
+    <button class="detail-close" aria-label="关闭详情">×</button><button class="detail-nav detail-prev" aria-label="上一张牌">‹</button><div id="detailCard" class="detail-card"></div><div id="detailInfo" class="detail-info"></div><button class="detail-nav detail-next" aria-label="下一张牌">›</button>
+  </section>
+  <footer><span>© MYSTIC LIGHT</span><p>SELF-REFLECTION / ENTERTAINMENT ONLY</p><span>VER. 02.0</span></footer>
   <script src="app.js"></script>
 </body>
 </html>
