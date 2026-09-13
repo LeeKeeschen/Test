@@ -21,18 +21,21 @@
 
   <main>
     <section id="reading" class="view active-view">
-      <div class="reading-hero">
-        <div class="hero-copy"><span class="kicker">DIVINATION / SELECT A SPREAD</span><h1>向内寻找<br><em>答案自会浮现</em></h1><p>选择一个观察角度。牌不是预言，而是此刻与你对话的镜面。</p></div>
-        <div class="sigil" aria-hidden="true"><span>☽</span><b>VII</b></div>
-        <div class="hero-index" aria-hidden="true">01</div>
+      <div class="home-stage" data-layout="single">
+        <div class="depth-copy" aria-hidden="true"><strong>ARCANA</strong><span>✦ Ⅶ ☽</span></div>
+        <div class="hero-copy"><span class="kicker">DIVINATION / RITUAL READY</span><h1>向内寻找<br><em>答案自会浮现</em></h1><p id="spreadHint">为当下提供一个清晰视角</p></div>
+        <div id="homeCards" class="home-cards" aria-label="等待洗牌的塔罗牌">
+          <button class="home-card" style="--i:0" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:1" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:2" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:3" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:4" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:5" aria-label="塔罗牌背面"></button><button class="home-card" style="--i:6" aria-label="塔罗牌背面"></button>
+        </div>
+        <aside class="spread-rail" aria-label="选择牌阵">
+          <span>SELECT SPREAD</span>
+          <button class="spread-option selected" data-spread="single"><b>01</b><span>一张牌<small>DAILY SIGNAL</small></span></button>
+          <button class="spread-option" data-spread="three"><b>02</b><span>时间之流<small>PAST / NOW / NEXT</small></span></button>
+          <button class="spread-option" data-spread="choice"><b>03</b><span>抉择之路<small>TWO DIRECTIONS</small></span></button>
+          <button class="spread-option" data-spread="celtic"><b>04</b><span>凯尔特十字<small>DEEP SCAN</small></span></button>
+        </aside>
+        <div class="launch-row"><div><span>SELECTED / <b id="selectedSpreadLabel">一张牌</b></span><p>点击进入完整抽牌仪式</p></div><button id="startReading" class="slash-button"><span>开始仪式</span><b>↗</b></button></div>
       </div>
-      <div class="spread-strip" aria-label="选择牌阵">
-        <button class="spread-option selected" data-spread="single"><b>01</b><span>一张牌<small>DAILY SIGNAL</small></span><i>1</i></button>
-        <button class="spread-option" data-spread="three"><b>02</b><span>时间之流<small>PAST / NOW / NEXT</small></span><i>3</i></button>
-        <button class="spread-option ritual-option" data-spread="choice"><b>03</b><span>抉择之路<small>TWO DIRECTIONS</small></span><i>2</i></button>
-        <button class="spread-option" data-spread="celtic"><b>04</b><span>凯尔特十字<small>DEEP SCAN</small></span><i>10</i></button>
-      </div>
-      <div class="launch-row"><div><span>READY TO READ</span><p id="spreadHint">为当下提供一个清晰视角</p></div><button id="startReading" class="slash-button"><span>进入牌阵</span><b>↗</b></button></div>
     </section>
 
     <section id="deck" class="view deck-view">
@@ -62,11 +65,12 @@
   </section>
 
   <section id="readingScene" class="reading-scene" aria-hidden="true">
-    <div class="scene-bg" aria-hidden="true">REVEAL <span>✦</span></div><button class="scene-close" aria-label="关闭牌阵">×</button>
-    <header><span class="kicker">LIVE READING / <b id="readingSpreadName"></b></span><h2 id="readingTopic">此刻的讯息</h2></header>
+    <div class="scene-bg" aria-hidden="true">RITUAL <span>✦</span></div><div class="scene-rays" aria-hidden="true"></div><button class="scene-close" aria-label="关闭牌阵">×</button>
+    <header><span class="kicker">LIVE READING / <b id="readingSpreadName"></b></span><h2 id="readingTopic">正在进入仪式</h2><div id="phaseRail" class="phase-rail"><i class="active">过渡</i><i>洗牌</i><i>排阵</i><i>选牌</i><i>揭示</i><i>解读</i></div></header>
+    <div id="ritualDeck" class="ritual-deck" aria-hidden="true"></div>
     <div id="readingCards" class="reading-cards"></div>
     <aside id="readingSummary" class="reading-summary"></aside>
-    <button id="redraw" class="slash-button redraw"><span>重新抽牌</span><b>↻</b></button>
+    <div class="reading-actions"><button id="revealAll" class="slash-button"><span>依次揭示</span><b>✦</b></button><button id="redraw" class="slash-button redraw"><span>重新开始</span><b>↻</b></button></div>
   </section>
 
   <section id="detailScene" class="detail-scene" aria-hidden="true">
